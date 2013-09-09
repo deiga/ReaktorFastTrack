@@ -1,4 +1,4 @@
-=== Reaktor Fast Track ===
+# === Reaktor Fast Track ===
 
 http://reaktor.fi/ura/fast_track/
 
