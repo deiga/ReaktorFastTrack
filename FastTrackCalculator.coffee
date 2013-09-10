@@ -5,12 +5,12 @@ numbers_string = "38861 29653 30721 27516 37130 08290 94809 08694 67037 18567 90
 calculator = (input) ->
   numbers = input.split(" ")
   largest_product = 0;
-  _.each(numbers, (n, rest) ->
-   sum = _.reduce(_.take(rest, 4), (memo, num) ->
-    return memo + num
-   , n)
-   if sum > largest_product
-    largest_product = sum
+  _.each(numbers, (n, index) ->
+    sum = _.reduce(_.take(_.rest(numbers, index+1), 4), (memo, num) ->
+      return memo * num
+    , n)
+    if sum > largest_product
+      largest_product = sum
   )
   return largest_product
 
