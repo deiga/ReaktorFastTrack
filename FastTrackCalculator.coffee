@@ -14,7 +14,7 @@ calculator = (input) ->
     sum = _.reduce(_.take(_.rest(input, index), 5), (memo, num) ->
       return memo * num
     , 1)
-    if sum > largest_product then largest_product = sum
+    largest_product = if sum > largest_product then sum else largest_product
   )
   return largest_product
 
