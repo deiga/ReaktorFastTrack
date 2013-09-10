@@ -21,7 +21,7 @@ calculator = function(input) {
     sum = _.reduce(_.take(_.rest(input, index), 5), function(memo, num) {
       return memo * num;
     }, 1);
-    return largest_product = sum > largest_product ? sum : largest_product;
+    largest_product = Math.max(sum, largest_product);
   });
   return largest_product;
 };

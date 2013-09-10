@@ -12,9 +12,10 @@ calculator = (input) ->
   largest_product = 0
   _.each(input, (n, index) ->
     sum = _.reduce(_.take(_.rest(input, index), 5), (memo, num) ->
-      return memo * num
+      memo * num
     , 1)
-    largest_product = if sum > largest_product then sum else largest_product
+    largest_product = Math.max(sum, largest_product)
+    return
   )
   return largest_product
 
