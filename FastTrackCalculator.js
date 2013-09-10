@@ -10,10 +10,10 @@
     var largest_product, numbers;
     numbers = input.split(" ");
     largest_product = 0;
-    _.each(numbers, function(n, rest) {
+    _.each(numbers, function(n, index) {
       var sum;
-      sum = _.reduce(_.take(rest, 4), function(memo, num) {
-        return memo + num;
+      sum = _.reduce(_.take(_.rest(numbers, index + 1), 4), function(memo, num) {
+        return memo * num;
       }, n);
       if (sum > largest_product) {
         return largest_product = sum;
