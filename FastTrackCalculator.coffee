@@ -11,11 +11,10 @@ make_numbers_string = () ->
 calculator = (input) ->
   largest_product = 0
   _.each(input, (n, index) ->
-    sum = _.reduce(_.take(_.rest(input, index+1), 4), (memo, num) ->
+    sum = _.reduce(_.take(_.rest(input, index), 5), (memo, num) ->
       return memo * num
-    , n)
-    if sum > largest_product
-      largest_product = sum
+    , 1)
+    if sum > largest_product then largest_product = sum
   )
   return largest_product
 

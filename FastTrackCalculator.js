@@ -18,9 +18,9 @@ calculator = function(input) {
   largest_product = 0;
   _.each(input, function(n, index) {
     var sum;
-    sum = _.reduce(_.take(_.rest(input, index + 1), 4), function(memo, num) {
+    sum = _.reduce(_.take(_.rest(input, index), 5), function(memo, num) {
       return memo * num;
-    }, n);
+    }, 1);
     if (sum > largest_product) {
       return largest_product = sum;
     }
