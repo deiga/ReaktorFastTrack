@@ -4,7 +4,7 @@ make_numbers_string = () ->
     text = ""
     possible = "0123456789";
 
-    for i in [0..999] by 1
+    for i in [0...1000] by 1
         text += possible.charAt(Math.floor(Math.random() * possible.length))
     return text
 

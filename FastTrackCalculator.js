@@ -8,7 +8,7 @@
     var i, possible, text, _i;
     text = "";
     possible = "0123456789";
-    for (i = _i = 0; _i <= 999; i = _i += 1) {
+    for (i = _i = 0; _i < 1000; i = _i += 1) {
       text += possible.charAt(Math.floor(Math.random() * possible.length));
     }
     return text;
