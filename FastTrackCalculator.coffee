@@ -9,14 +9,10 @@ make_numbers_string = () ->
     return text
 
 calculator = (input) ->
-  largest_product = 0
-  _.each(input, (n, index) ->
-    sum = _.reduce(_.take(_.rest(input, index), 5), (memo, num) ->
+  _.max(_.map(input, (a, index, c) ->
+    _.reduce(_.take(_.rest(input, index), 5), (memo, num) ->
       memo * num
     , 1)
-    largest_product = Math.max(sum, largest_product)
-    return
-  )
-  return largest_product
+  ))
 
 console.log calculator(make_numbers_string())

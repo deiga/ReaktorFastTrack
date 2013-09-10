@@ -14,16 +14,11 @@ make_numbers_string = function() {
 };
 
 calculator = function(input) {
-  var largest_product;
-  largest_product = 0;
-  _.each(input, function(n, index) {
-    var sum;
-    sum = _.reduce(_.take(_.rest(input, index), 5), function(memo, num) {
+  return _.max(_.map(input, function(a, index, c) {
+    return _.reduce(_.take(_.rest(input, index), 5), function(memo, num) {
       return memo * num;
     }, 1);
-    largest_product = Math.max(sum, largest_product);
-  });
-  return largest_product;
+  }));
 };
 
 console.log(calculator(make_numbers_string()));
